@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devine le Nombre - Windows 11 Style</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">
+        <div class="title">Devine le Nombre</div>
+        <div class="window-controls">
+          <button class="minimize"></button>
+          <button class="maximize"></button>
+          <button class="close"></button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="setup-screen" id="setup-screen">
+          <h2>Configuration du Jeu</h2>
+          <div class="input-group">
+            <label for="max-number">Nombre maximum:</label>
+            <input
+              type="number"
+              id="max-number"
+              min="10"
+              max="1000"
+              value="100"
+            />
+          </div>
+          <div class="input-group">
+            <label for="max-attempts">Nombre de tentatives:</label>
+            <input type="number" id="max-attempts" min="3" max="20" value="7" />
+          </div>
+          <button class="win-btn" id="start-btn">Commencer</button>
+        </div>
+
+        <div class="game-screen" id="game-screen" style="display: none">
+          <div class="game-info">
+            <div>
+              Devine un nombre entre <span id="range-display">1-100</span>
+            </div>
+            <div>
+              Tentatives restantes: <span id="attempts-display">7</span>
+            </div>
+            <div>
+              Tentatives précédentes: <span id="previous-guesses"></span>
+            </div>
+          </div>
+          <div class="guess-input">
+            <input
+              type="number"
+              id="guess-input"
+              placeholder="Entrez votre supposition"
+            />
+            <button class="win-btn" id="guess-btn">Deviner</button>
+          </div>
+          <div class="hint" id="hint"></div>
+        </div>
+
+        <div class="result-screen" id="result-screen" style="display: none">
+          <div class="result-content" id="result-content">
+            <div class="result-icon" id="result-icon"></div>
+            <h2 id="result-title">Félicitations!</h2>
+            <p id="result-message">
+              Vous avez trouvé le nombre en 5 tentatives!
+            </p>
+            <div class="stats">
+              <div>Nombre à trouver: <span id="target-number">42</span></div>
+              <div>Votre meilleur score: <span id="best-score">5</span></div>
+            </div>
+            <button class="win-btn" id="restart-btn">Rejouer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>copyrith @pirrot 2025</footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
